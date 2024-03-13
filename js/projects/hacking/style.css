@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: green;
+}
+h1{
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 6rem;
+}
+h2,h3,h4,p{
+    color: rgb(243, 237, 237);
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 20px;
+}

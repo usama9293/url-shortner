@@ -1,0 +1,274 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 90px; /* Adjust padding for smaller screens */
+    padding-right: 90px; /* Adjust padding for smaller screens */
+    margin-top: -10px;
+    color: #070707;
+   
+  }
+
+  .nav-bar {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-bar li {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+  }
+
+  .nav-bar a {
+    text-decoration: none;
+    color: #2b2525;
+  }
+
+  .logo {
+    margin-right: 10px;
+    margin-top: 18px;
+    width: 30px;
+    height: 30px;
+  }
+
+  header h2 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000000;
+    position: relative;
+    left: 70px;
+    top: -40px;
+    
+
+   
+  }
+.icon>img{
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    position: relative;
+    top: 25px;
+    }
+    
+
+ /* ... Your existing CSS ... */
+
+@media screen and (max-width: 850px) {
+  header {
+    padding-left: 10px; /* Adjust padding for smaller screens */
+    padding-right: 10px; /* Adjust padding for smaller screens */
+  }
+
+  header h2 {
+    left: 0; /* Reset the left position for smaller screens */
+    top: 0; /* Reset the top position for smaller screens */
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-bar li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-icon {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: none;
+  }
+
+  nav.show ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    padding: 10px;
+    color: #fff; /* Adjust the color as needed */
+    text-decoration: none;
+  }
+
+  .card {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 10px;
+  }
+
+  ul li a {
+    display: none;
+  }
+
+  ul img {
+    display: none;
+  }
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+}
+main p{
+  font-size: 30px;
+  font-weight: lighter;
+  color: #000000;
+}
+main h1{
+  font-size: 50px;
+  font-weight:normal;
+  color: #000000;
+}
+
+main strong {
+  font-weight: bold;
+}
+.main-1 .btn{
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color:#00b6d1;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  transition: 0.5s;
+}
+.btn:hover{
+  background-color: #ffffff;
+  color: #00b6d1;
+  border: 1px solid #00b6d1;
+}
+/* ... Your existing CSS ... */
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; /* Adjust the gap between grid items */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  padding: 0 180px;
+  
+}
+
+.card-1 {
+  background-color: rgb(232, 240, 240);
+  border: 0px solid #00b6d1;
+  height: 110px;
+  width: 250px;
+  padding: 20px;
+
+}
+
+.card-1 .btn-1,
+.card-1 .btn-2 {
+  margin-top: 2px;
+  padding: 8px 15px; /* Adjusted padding for a smaller size */
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 12px; /* Adjusted font size */
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  margin-top: 5px;
+  transition: 0.5s;
+}
+
+.card-1 .btn-1 {
+  background-color: #00b6d1; /* Blue */
+  color: #ffffff;
+}
+
+.card-1 .btn-2 {
+  background-color: #4fbe4f; /* Green */
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 850px) {
+  .card {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 10px;
+  }
+  ul li a{
+    display: none;
+  }
+  ul img{
+    display: none;
+  }
+}
+.nav-icon {
+  display: none; /* Hide the icon by default for larger screens */
+}
+
+.nav-icon .icon {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+/* ... Your existing CSS ... */
+
+@media screen and (max-width: 850px) {
+  .nav-icon {
+    display: block; /* Show the icon for smaller screens */
+    position: relative;
+    /* Adjust the positioning as needed */
+    left: 0; /* Adjust the positioning as needed */
+    margin-top: 10px; /* Add margin to separate the icon from the header */
+    margin-left: 10px; /* Add margin to separate the icon from the header */
+  }
+
+  nav ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    display: none;
+  }
+
+  nav.show ul {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #fff; /* Adjust the color as needed */
+    text-decoration: none;
+  }
+}
