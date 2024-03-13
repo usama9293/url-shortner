@@ -1,50 +1,15 @@
-import  Express  from "express"
-
+import Express from "express";
+import mongoose from "mongoose";
 
 const app = Express();
 
-//app.use(Express.json());
-app.use(Express.urlencoded({extended:true}));
-
-
-
-app.post("/post",(req,res)=>{
-
-    console.log(req.body);
-    res.send(req.body)
-}
-)
-
-
-
-
-
-
-
-app.get("/",(req,res)=>{
-
-    res.send("hello")
-})
-
-
-
-app.listen(3000, () => {   
-
-    console.log("Server is running on port 3000");
-    
+app.get("/", (req, res) => {
+  res.send("hello");
 });
 
-
-
-
-
-
-
-
-
-
-
-
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
 
 //import birds from "./bird.js"
 //app.use('/birds', birds)
@@ -60,4 +25,3 @@ app.listen(3000, () => {
 //   .put((req, res) => {
 //     res.send('Update the book')
 //   })
-
