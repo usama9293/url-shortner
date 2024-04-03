@@ -1,6 +1,16 @@
 import express from "express";
+import mongoose from "mongoose";
 
 const app = express();
+
+mongoose
+  .connect("mongodb://localhost:27017/url-shortner")
+  .then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch((err) => {
+    console.log("Cannot connect to the database!", err);
+  });
 
 app.get("/", (req, res) => {
   res.send("Hello World");
