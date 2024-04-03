@@ -1,7 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
+import { router } from "./router/url.js";
 
 const app = express();
+app.use(express.json());
+app.use("/url", router);
 
 mongoose
   .connect("mongodb://localhost:27017/url-shortner")
