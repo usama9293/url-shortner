@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+    </style>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+    <% if (locals.shortenedUrl) { %>
+        <p>Your shortened URL is: <a href="<%= shortenedUrl %>"><%= shortenedUrl %></a></p>
+   <%  }%> 
+    
+    <form action="/url" method="post">
+        <label for="url">Enter URL:</label>
+        <input type="text" name="url" id="url" placeholder="www.example.com" required>
+        <button type="submit">Shorten</button>
+    </form>
+    <% if(locals.urls && locals.urls.length > 0) { %>
+        <div>
+            <h2>Shortened URLs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S no</th>
+                        <th>Original URL</th>
+                        <th>Shortened URL</th>
+                        <th>Clicks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% locals.urls.forEach((url, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= url.fullUrl %></td>
+                            <td><a href="<%= url.shortUrl %>"><%= url.shortUrl %></a></td>
+                            <td><%= url.clicks.length %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } else { %>
+        <p>No shortened URLs available</p>
+    <% } %>
+</body>
+</html>
+</body>
+</html>

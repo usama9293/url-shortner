@@ -10,7 +10,18 @@ const urlSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    clicks: [{ timestamp: { type: Number, default: Date.now() } }],
+    clicks: [
+      {
+        timestamp: {
+          type: Number,
+          default: Date.now,
+        },
+      },
+    ],
+    createdby: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
   },
   {
     timestamps: true,

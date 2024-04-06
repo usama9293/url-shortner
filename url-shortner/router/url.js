@@ -1,8 +1,10 @@
 import express from "express";
-import { getURL } from "../controller/url.js";
+import { getAnalytics, getURL } from "../controller/url.js";
 
 const router = express.Router();
 
-router.get("/", getURL);
+router.post("/", getURL);
 
-export { router };
+router.get("/analytics", getAnalytics);
+
+export default router;
